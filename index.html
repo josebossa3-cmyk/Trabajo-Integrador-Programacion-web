@@ -1,1 +1,80 @@
-<h1> Github Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WallUrban</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Un paisaje a la vez.</h1>
+      <div class="carousel">
+        <div class="slide activo">
+          <img src="./src/img/rascacielos.jpg" alt="Rascacielos" /><button>
+            Descargar
+          </button>
+        </div>
+        <div class="slide">
+          <img
+            src="./src/img/calles-nocturas.jpg"
+            alt="Calles Nocturnas de Japon"
+          /><button>Descargar</button>
+        </div>
+        <div class="slide">
+          <img src="./src/img/puentes.jpg" alt="Puente Chinos" /><button>
+            Descargar
+          </button>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </header>
+
+    <main class="galeria-container">
+      <div class="categoria">
+        <h2>Categoria</h2>
+        <ul>
+          <li>Rascacielos</li>
+          <li>Calles Nocturnas</li>
+          <li>Graffitis</li>
+          <li>Puentes</li>
+        </ul>
+      </div>
+
+      <div class="wallpapers">
+        <div class="wallpaper">
+          <img src="" alt="Wallpaper 1" />
+          <button>Ver & Descargar</button>
+        </div>
+        <div class="wallpaper">
+          <img src="" alt="Wallpaper 2" />
+          <button>Ver & Descargar</button>
+        </div>
+        <div class="wallpaper">
+          <img src="" alt="Wallpaper 3" />
+          <button>Ver & Descargar</button>
+        </div>
+      </div>
+
+      <div class="top-descargas">
+        <h2>Top Wallpapers Semanales</h2>
+        /* Otro carrousel podemos agregar acá jose, sino una especie de mini
+        galeria o algo similar*/
+      </div>
+    </main>
+
+    <footer>
+      <h2>Subi tu Wallpaper</h2>
+      <form action="" id="subirForm">
+        <input type="text" placeholder="Nombre" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Enlace del wallpaper" required></textarea>
+        <button>Enviar</button>
+        <p id="msg"></p>
+      </form>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
