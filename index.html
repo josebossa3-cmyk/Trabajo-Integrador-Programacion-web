@@ -5,29 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WallUrban</title>
     <link rel="stylesheet" href="style.css" />
+    
   </head>
   <body>
     <header>
       <h1>Un paisaje a la vez.</h1>
       <div class="carousel">
+        
         <div class="slide activo">
           <img src="./src/img/rascacielos.jpg" alt="Rascacielos" /><button>
             Descargar
           </button>
         </div>
+
         <div class="slide">
           <img
             src="./src/img/calles-nocturas.jpg"
             alt="Calles Nocturnas de Japon"
           /><button>Descargar</button>
         </div>
+
         <div class="slide">
           <img src="./src/img/puentes.jpg" alt="Puente Chinos" /><button>
             Descargar
           </button>
         </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
+
+        <div class="slide">
+          <img src="./src/img/descarga.jpeg" alt="paisaje tropical" /><button>
+            Descargar
+          </button>
+        </div>
+        <div class="slide">
+          <img src="./src/img/Fondo Campo De Girasoles Al Atardecer de Pantalla Imagen para Descarga Gratuita - Pngtree.jpeg" alt="Campo" /><button>
+            Descargar
+          </button>
+        </div>
+        
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
       </div>
     </header>
 
@@ -56,15 +72,49 @@
           <button>Ver & Descargar</button>
         </div>
       </div>
-
-      <div class="top-descargas">
+<br>
+      <div class="top-descargas"> <!-- esto es el segundo carrousel -->
         <h2>Top Wallpapers Semanales</h2>
-        /* Otro carrousel podemos agregar acá jose, sino una especie de mini
-        galeria o algo similar*/
+        <div class="carousel-track"> 
+        <div class="group">
+          <div class="card">
+            <img src="./src/img/1.jpg" alt="ejemplo 1">
+          </div>
+          <div class="card">
+            <img src="./src/img/2.jpg" alt="ejemplo 2"> </div>
+          <div class="card"> 
+            <img src="./src/img/3.jpg" alt="ejemplo 3">
+          </div>
+          <div class="card"> 
+            <img src="./src/img/4.jpg" alt="ejemplo 4">
+          </div>  
+          <div class="card">
+            <img src="./src/img/5.jpg" alt="ejemplo 5"> </div>
+          <div class="card">
+            <img src="./src/img/6.jpg" alt="ejemplo 6"> </div>
+        </div>
+          <div  aria-hidden="true" class="group">
+          <div class="card">
+            <img src="./src/img/1.jpg" alt="ejemplo 1">
+          </div>
+          <div class="card">
+            <img src="./src/img/2.jpg" alt="ejemplo 2"> </div>
+          <div class="card"> 
+            <img src="./src/img/3.jpg" alt="ejemplo 3">
+          </div>
+          <div class="card"> 
+            <img src="./src/img/4.jpg" alt="ejemplo 4">
+          </div>  
+          <div class="card">
+            <img src="./src/img/5.jpg" alt="ejemplo 5"> </div>
+          <div class="card">
+            <img src="./src/img/6.jpg" alt="ejemplo 6"> </div>
+        </div>
+      </div>
       </div>
     </main>
 
-    <footer>
+    
       <h2>Subi tu Wallpaper</h2>
       <form action="" id="subirForm">
         <input type="text" placeholder="Nombre" required />
