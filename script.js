@@ -17,11 +17,12 @@ const modal = document.createElement("div");
 modal.id = "modal";
 modal.style.cssText = `
   position:fixed;top:0;left:0;width:100%;height:100%;
-  background: rgba(0,0,0,0.8);display:none;justify-content:center;align-items:center;z-index:1000;
+  justify-content:center;align-items:center;z-index:1000;
 `;
 const modalImg = document.createElement("img");
 modalImg.style.maxWidth = "90%";
 modalImg.style.maxHeight = "90%";
+modalImg.style.borderRadius = "5%";
 modal.appendChild(modalImg);
 document.body.appendChild(modal);
 
