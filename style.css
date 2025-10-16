@@ -6,6 +6,51 @@
   height: 85px;
   padding: 5px 2% 5px 0%;
 }
+.busqueda{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 250px;
+  margin: 0 ;
+  position: relative;
+  border-radius: 50px;
+  background: linear-gradient(#0b0f17, #290000) padding-box,
+  linear-gradient(90deg, #0ff, #7c4dff, #0ff) border-box;
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 12px #0ff5, 0 0 24px #0ff3;
+}
+.buscar{
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  color: #7fffd4;
+  font-family: 'Segoe UI', sans-serif;
+}
+.buscar::placeholder {
+  color: #7fffd4;
+  opacity: 0.8;
+}
+.busqueda:focus-within {
+  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff , 0 0 45px #7c4dff;
+}
+.icono{
+  background: transparent;
+  border: none;
+  padding: 10.5px;
+  border-radius: 0 50px 50px 0;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
 .header .logo{
   cursor: pointer;
 }
