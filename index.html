@@ -5,143 +5,92 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WallUrban</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./src/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
-  <header class="header">
-    <div class="logo">
-      <img src="./src/img/EJ or JE Logo.jpeg" alt="Logo" />
+  <header>
+    <div class="nav-bar" id="navbar">
+      <a href="#home" class="nav-logo">CinemaCenter</a>
+      <a href="#mostrarTodo">Mostrar Todo</a>
+      <a href="#peliculas">Peliculas</a>
+      <a href="#tendencias">Tendencias</a>
+      <a href="#contacto">Contacto</a>
+      <a href="javascript:void(0);" class="icon" onclick="menuHamburguesa()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Categorias</a></li>
-        <li><a href="#">Top Wallpapers</a></li>
-      </ul>
-    </nav>
-    <div class="busqueda">
-  <input class="buscar" type="search" placeholder="Buscar...">
-  <button class="icono">
-    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6.5C10 8.433 8.433 10 6.5 10C4.567 10 3 8.433 3 6.5C3 4.567 4.567 3 6.5 3C8.433 3 10 4.567 10 6.5ZM9.30884 10.0159C8.53901 10.6318 7.56251 11 6.5 11C4.01472 11 2 8.98528 2 6.5C2 4.01472 4.01472 2 6.5 2C8.98528 2 11 4.01472 11 6.5C11 7.56251 10.6318 8.53901 10.0159 9.30884L12.8536 12.1464C13.0488 12.3417 13.0488 12.6583 12.8536 12.8536C12.6583 13.0488 12.3417 13.0488 12.1464 12.8536L9.30884 10.0159Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-    </svg>
-  </button>
-</div>
-    <a href="#" class="btn"><button>Contacto</button></a>
-    
   </header>
-  <h1 class="titulo"">UN PAISAJE A LA VEZ</h1>
-  <div class=" carousel">
+  <section class="hero">
+    <h6>¿De qué se trata?</h6>
+    <h1>
+      World War Z
+    </h1>
+    <p>
+      Cuando el ex investigador de la ONU Gerry Lane (Brad Pitt) y su familia se
+      quedan atrapados en un atasco urbano, intuye que no se trata de un atasco cualquiera.
+      Sus sospechas se confirman cuando, de repente, la ciudad se sumerge en el caos.
+      Un virus letal, que se propaga a través de una simple mordedura, está convirtiendo a personas sanas
+      en seres despiadados, irracionales y salvajes. Mientras la pandemia amenaza
+      con consumir a la humanidad, Gerry lidera una búsqueda mundial para encontrar el origen
+      de la infección y, con suerte, una forma de detener su propagación.
+    </p>
+    <button>Ver ahora</button>
+  </section>
 
-    <div class="slide activo">
-      <img src="./src/img/rascacielos.jpg" alt="Rascacielos" /><button>
-        Descargar
-      </button>
+  <section class="generos">
+    <ul>
+      <li class="generos-peliculas"><a href="#aventura">Aventura</a></li>
+      <li class="generos-peliculas"><a href="#romatica">Romantica</a></li>
+      <li class="generos-peliculas"><a href="#fantasia">Fantasia</a></li>
+      <li class="generos-peliculas"><a href="#accion">Accion</a></li>
+      <li class="generos-peliculas"><a href="#horror">Horror</a></li>
+      <li class="generos-peliculas"><a href="#comedia">Comedia</a></li>
+    </ul>
+    <hr>
+    <div class="carrousel-peliculas">
+      <h4>Recomendado | ${generos-peliculas+seleccionado}</h4>
+      <ul>
+        <li><a href=""><img src="" alt=""></a></li>
+        <li><a href=""><img src="" alt=""></a></li>
+        <li><a href=""><img src="" alt=""></a></li>
+      </ul>
     </div>
+  </section>
+  <hr>
 
-    <div class="slide ">
-      <img src="./src/img/calles-nocturas.jpg" alt="Calles Nocturnas de Japon" /><button>Descargar</button>
-    </div>
-
-    <div class="slide">
-      <img src="./src/img/puentes.jpg" alt="Puente Chinos" /><button>
-        Descargar
-      </button>
-    </div>
-
-    <div class="slide">
-      <img src="./src/img/descarga.jpeg" alt="paisaje tropical" /><button>
-        Descargar
-      </button>
-    </div>
-    <div class="slide">
-      <img
-        src="./src/img/Fondo Campo De Girasoles Al Atardecer de Pantalla Imagen para Descarga Gratuita - Pngtree.jpeg"
-        alt="Campo" /><button>
-        Descargar
-      </button>
-    </div>
-
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-    </div>
-
-    <main class="galeria-container">
-      <div class="categoria">
-        <h2>CATEGORIA</h2>
-        <ul>
-          <li>Rascacielos</li>
-          <li>Calles Nocturnas</li>
-          <li>Graffitis</li>
-          <li>Puentes</li>
-        </ul>
-      </div>
-
-      <div class="wallpapers">
-        <div class="wallpaper">
-          <img src="" alt="Wallpaper 1" />
-          <button>Ver & Descargar</button>
+  <section class="pelicula-seleccionada">
+    <div class="pelicula">
+      <h4>${generos-peliculas+seleccionado}</h4>
+      <h1>${titulo-pelicula}</h2>
+        <p>${director-pelicula} | ${añoPelicula} | Rating IMDB: ${puntuacion}</p>
+        <h2>Descripción:</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, obcaecati! Autem delectus quae ab
+          accusamus sit voluptates beatae repellat doloremque soluta vel, non distinctio modi tenetur nam error
+          obcaecati consectetur!</p>
+        <div>
+          <img src="" alt="" srcset="">
+          <button>Ver Ahora</button>
         </div>
-        <div class="wallpaper">
-          <img src="" alt="Wallpaper 2" />
-          <button>Ver & Descargar</button>
-        </div>
-        <div class="wallpaper">
-          <img src="" alt="Wallpaper 3" />
-          <button>Ver & Descargar</button>
-        </div>
-      </div>
+    </div>
+  </section>
 
-      <div class="top-descargas"> <!-- esto es el segundo carrousel -->
-        <h2 style="text-align: center;">Top Wallpapers Semanales</h2>
-        <div class="carousel-container">
-          <div class="carousel-track">
-            <div class="group">
-              <div class="card"><img src="./src/img/1.jpg" alt="ejemplo 1"></div>
-              <div class="card"><img src="./src/img/2.jpg" alt="ejemplo 2"></div>
-              <div class="card"><img src="./src/img/3.jpg" alt="ejemplo 3"></div>
-              <div class="card"><img src="./src/img/4.jpg" alt="ejemplo 4"></div>
-              <div class="card"><img src="./src/img/5.jpg" alt="ejemplo 5"></div>
-              <div class="card"><img src="./src/img/6.jpg" alt="ejemplo 6"></div>
-            </div>
+  <footer>
+    <ul>
+      <li class="redes"><img src="./src/img/facebook.svg" alt="Facebook"></li>
+      <li class="redes"><img src="./src/img/instagram.svg" alt="Instagram"></li>
+      <li class="redes"><img src="./src/img/x.svg" alt="X"></li>
+    </ul>
+    <h6>Ningun derecho reservado. José Bossa | Ema Dupre - Programacion WEB</h6>
+  </footer>
 
-            <div class="group" aria-hidden="true">
-              <div class="card"><img src="./src/img/1.jpg" alt="ejemplo 1"></div>
-              <div class="card"><img src="./src/img/2.jpg" alt="ejemplo 2"></div>
-              <div class="card"><img src="./src/img/3.jpg" alt="ejemplo 3"></div>
-              <div class="card"><img src="./src/img/4.jpg" alt="ejemplo 4"></div>
-              <div class="card"><img src="./src/img/5.jpg" alt="ejemplo 5"></div>
-              <div class="card"><img src="./src/img/6.jpg" alt="ejemplo 6"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <h2 style="text-align: center;">Subí tu Wallpaper</h2>
-    <form action="" id="subirForm">
-      <input type="text" placeholder="Nombre" required />
-      <input type="email" placeholder="Email" required />
-      <textarea placeholder="Enlace del wallpaper" required></textarea>
-      <button>Enviar</button>
-      <p id="msg"></p>
-    </form>
-    <footer>
-      <div class="lista-redes">
-        <ul class="redes">
-          <li><a href="#"><img src="./src/img/facebook.svg" alt="Facebook"></a></li>
-          <li><a href="#"><img src="./src/img/x.svg" alt="Twitter"></a></li>
-          <li><a href="#"><img src="./src/img/instagram.svg" alt="Instagram"></a></li>
-        </ul>
-      </div>
-      <h6>Ningun derecho reservado - José Bossa & Ema Dupré / Programación Web.</h6>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="./src/script.js"></script>
 </body>
+
 </html>
