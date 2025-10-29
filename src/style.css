@@ -186,7 +186,6 @@ body {
   border-color: #ff2d2d;
 }
 h4{
-  text-align: center;
   margin-bottom: 15px;
   font-size: 1.5em;
   color: #ff2d2d;
@@ -194,7 +193,6 @@ h4{
 
 
 #prevBtn, #nextBtn {
-  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: #ff2d2d;
@@ -314,3 +312,86 @@ footer .redes img {
   filter: invert(1);
 }
 
+
+/* Modal contacto */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  color: #000;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.cerrar {
+  position: absolute;
+  right: 15px; top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#form-contacto input,
+#form-contacto select,
+#form-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#form-contacto button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+/* mostrar todo html */ 
+.mostrar-todo {
+  padding: 40px;
+  text-align: center;
+}
+
+.grid-peliculas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card-pelicula {
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card-pelicula:hover {
+  transform: scale(1.05);
+}
+
+.card-pelicula img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}

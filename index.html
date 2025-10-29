@@ -1,111 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WallUrban</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WallUrban</title>
-  <link rel="stylesheet" href="./src/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
+  <body>
+    <header>
+      <div class="nav-bar" id="navbar">
+        <a href="#home" class="nav-logo">CinemaCenter</a>
+        <a href="mostrarTodo.html">Mostrar Todo</a>
+        <a href="#peliculas">Peliculas</a>
+        <a href="#tendencias">Tendencias</a>
+        <a href="#contacto" id="link-contacto">Contacto</a>
+        <a href="javascript:void(0);" class="icon" onclick="menuHamburguesa()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </header>
+    <section class="hero">
+      <h6>¿De qué se trata?</h6>
+      <h1>World War Z</h1>
+      <p>
+        Cuando el ex investigador de la ONU Gerry Lane (Brad Pitt) y su familia
+        se quedan atrapados en un atasco urbano, intuye que no se trata de un
+        atasco cualquiera. Sus sospechas se confirman cuando, de repente, la
+        ciudad se sumerge en el caos. Un virus letal, que se propaga a través de
+        una simple mordedura, está convirtiendo a personas sanas en seres
+        despiadados, irracionales y salvajes. Mientras la pandemia amenaza con
+        consumir a la humanidad, Gerry lidera una búsqueda mundial para
+        encontrar el origen de la infección y, con suerte, una forma de detener
+        su propagación.
+      </p>
+      <button>Ver ahora</button>
+    </section>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-</head>
-
-<body>
-  <header>
-    <div class="nav-bar" id="navbar">
-      <a href="#home" class="nav-logo">CinemaCenter</a>
-      <a href="#mostrarTodo">Mostrar Todo</a>
-      <a href="#peliculas">Peliculas</a>
-      <a href="#tendencias">Tendencias</a>
-      <a href="#contacto">Contacto</a>
-      <a href="javascript:void(0);" class="icon" onclick="menuHamburguesa()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-  </header>
-  <section class="hero">
-    <h6>¿De qué se trata?</h6>
-    <h1>
-      World War Z
-    </h1>
-    <p>
-      Cuando el ex investigador de la ONU Gerry Lane (Brad Pitt) y su familia se
-      quedan atrapados en un atasco urbano, intuye que no se trata de un atasco cualquiera.
-      Sus sospechas se confirman cuando, de repente, la ciudad se sumerge en el caos.
-      Un virus letal, que se propaga a través de una simple mordedura, está convirtiendo a personas sanas
-      en seres despiadados, irracionales y salvajes. Mientras la pandemia amenaza
-      con consumir a la humanidad, Gerry lidera una búsqueda mundial para encontrar el origen
-      de la infección y, con suerte, una forma de detener su propagación.
-    </p>
-    <button>Ver ahora</button>
-  </section>
-
-  <section class="generos">
-    <ul>
-      <li class="generos-peliculas"><a href="#aventura">Aventura</a></li>
-      <li class="generos-peliculas"><a href="#romatica">Romantica</a></li>
-      <li class="generos-peliculas"><a href="#fantasia">Fantasia</a></li>
-      <li class="generos-peliculas"><a href="#accion">Accion</a></li>
-      <li class="generos-peliculas"><a href="#terror">Terror</a></li>
-      <li class="generos-peliculas"><a href="#comedia">Comedia</a></li>
-    </ul>
-    <hr>
-    <div class="carrousel-peliculas">
-      <h4>Peliculas Populares</h4>
+    <section class="generos">
       <ul>
-        <li href=""><img src="/imagenes/descarga (2).jpeg" alt=""></li>
-        <li href=""><img src="/imagenes/descarga (4).jpeg" alt=""></li>
-        <li href=""><img src="/imagenes/The Conjuring (2013).jpeg" alt=""></li>
-        <li href=""><img src="/imagenes/descarga (3).jpeg" alt=""></li>
-        <li href=""><img src="/imagenes/descarga (5).jpeg" alt=""></li>
+        <li class="generos-peliculas"><a href="#aventura">Aventura</a></li>
+        <li class="generos-peliculas"><a href="#romatica">Romantica</a></li>
+        <li class="generos-peliculas"><a href="#fantasia">Fantasia</a></li>
+        <li class="generos-peliculas"><a href="#accion">Accion</a></li>
+        <li class="generos-peliculas"><a href="#terror">Terror</a></li>
+        <li class="generos-peliculas"><a href="#comedia">Comedia</a></li>
       </ul>
-    </div>
-    <hr>
-    <div class="segundo-carrousel">
-      <h4>Top Peliculas</h4>
-      <button id="prevBtn"><</button>
-      <ul>
-        <li href=""><img src="/imagenes/descarga (2).jpeg" alt=""></li>
-        <li href=""><img src="/imagenes/descarga (4).jpeg" alt=""></li>
-        <li href=""><img src="/imagenes/The Conjuring (2013).jpeg" alt=""></li>
-        <li href=""><img src="/imagenes/descarga (3).jpeg" alt=""></li>
-        <li href=""><img src="/imagenes/descarga (5).jpeg" alt=""></li>
-      </ul>
-      <button id="nextBtn">></button>
-    </div>
-  </section>
-  <hr>
+      <hr />
+      <div class="carrousel-peliculas carrousel-populares">
+        <h4>
+          Peliculas Populares | <span id="genero-seleccionado">Aventura</span>
+        </h4>
+        <ul></ul>
+      </div>
 
-  <section class="pelicula-seleccionada">
-    <div class="pelicula">
-      <h4>${generos-peliculas+seleccionado}</h4>
-      <h1>${titulo-pelicula}</h2>
-        <p>${director-pelicula} | ${añoPelicula} | Rating IMDB: ${puntuacion}</p>
+      <hr />
+
+      <div class="carrousel-peliculas carrousel-top">
+        <h4>Top Peliculas | IMDB</h4>
+        <div class="carrousel-controles">
+          <!--hay que mejorar los botones para el carrousel.-->
+          <button id="prevBtn"><</button>
+          <ul></ul>
+          <button id="nextBtn">></button>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- estaria bueno que esto se cargue dinamicamente con js segun la pelicula seleccionada y que este en display none al inicio. -->
+    <section class="pelicula-seleccionada">
+      <div class="pelicula">
+        <h4 class="detalle-genero">Genero</h4>
+        <h1 class="detalle-titulo">Titulo</h1>
+        <p class="detalle-info">Director | Año | Rating IMDB: Puntuacion</p>
         <h2>Descripción:</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, obcaecati! Autem delectus quae ab
-          accusamus sit voluptates beatae repellat doloremque soluta vel, non distinctio modi tenetur nam error
-          obcaecati consectetur!</p>
+        <p class="detalle-descripcion">Lorem ipsum...</p>
         <div>
-          <img src="" alt="" srcset="">
+          <img class="detalle-imagen" src="" alt="imagen de la pelicula" />
           <button>Ver Ahora</button>
         </div>
+      </div>
+    </section>
+
+    <footer>
+      <ul>
+        <li class="redes">
+          <img src="./src/img/facebook.svg" alt="Facebook" />
+        </li>
+        <li class="redes">
+          <img src="./src/img/instagram.svg" alt="Instagram" />
+        </li>
+        <li class="redes"><img src="./src/img/x.svg" alt="X" /></li>
+      </ul>
+      <h6>
+        Ningun derecho reservado. José Bossa | Ema Dupre - Programacion WEB
+      </h6>
+    </footer>
+
+    <!-- modal contacto -->
+    <div id="modal-contacto" class="modal">
+      <div class="modal-content">
+        <span class="cerrar">&times;</span>
+        <h2>Contáctanos</h2>
+        <form id="form-contacto">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
+
+          <label for="motivo">Motivo:</label>
+          <select id="motivo" required>
+            <option value="">Seleccionar...</option>
+            <option value="problema">Reportar un problema</option>
+            <option value="consulta">Consulta general</option>
+            <option value="aporte">Aporte o sugerencia</option>
+          </select>
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" rows="5" required></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
     </div>
-  </section>
 
-  <footer>
-    <ul>
-      <li class="redes"><img src="./src/img/facebook.svg" alt="Facebook"></li>
-      <li class="redes"><img src="./src/img/instagram.svg" alt="Instagram"></li>
-      <li class="redes"><img src="./src/img/x.svg" alt="X"></li>
-    </ul>
-    <h6>Ningun derecho reservado. José Bossa | Ema Dupre - Programacion WEB</h6>
-  </footer>
-
-  <script src="./src/script.js"></script>
-</body>
-
+    <script src="./src/script.js"></script>
+  </body>
 </html>
