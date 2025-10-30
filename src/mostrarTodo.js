@@ -170,6 +170,7 @@ const peliculas = {
 
 // aca hacemos las tarjetas y las agregamos al contenedor
 const contenedor = document.querySelector(".grid-peliculas");
+const detalle = document.getElementById("detalle-pelicula");
 
 Object.entries(peliculas).forEach(([genero, lista]) => {
   lista.forEach((peli) => {
@@ -183,13 +184,16 @@ Object.entries(peliculas).forEach(([genero, lista]) => {
 
     // al hacer click, guardas datos y volver a index
     card.addEventListener("click", () => {
-      localStorage.setItem(
-        "peliculaSeleccionada",
-        JSON.stringify({ ...peli, genero })
-      );
-      window.location.href = "index.html#peliculaSeleccionada";
-    });
-
-    contenedor.appendChild(card);
+      detalle.innerHTML = `
+        <h2>${peli.titulo}</h2>
+        <img src="${peli.imagen}" alt="${peli.titulo}">
+        <p><strong>Director:</strong> ${peli.director}</p>
+        <p><strong>Año:</strong> ${peli.año}</p>
+        <p><strong>IMDB:</strong> ${peli.imdb}</p>
+        <p><strong>Descripción:</strong> ${peli.descripcion}</p>
+      `;
+      detalle.scrollIntoView({ behavior: 'smooth' });
   });
-});
+  contenedor.appendChild(card);
+  });
+  });

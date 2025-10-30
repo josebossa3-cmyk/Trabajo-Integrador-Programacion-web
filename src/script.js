@@ -219,9 +219,10 @@ function mostrarDetallePorObjeto(peli, generoLabel) {
   }`;
   detalleDescripcion.textContent = peli.descripcion;
   detalleImagen.src = peli.imagen || "";
-  document
-    .querySelector(".pelicula-seleccionada")
-    .scrollIntoView({ behavior: "smooth" });
+  const contenedor = document.querySelector(".pelicula-seleccionada");
+  contenedor.style.display = "flex"; 
+  contenedor.scrollIntoView({ behavior: "smooth" });
+  
 }
 
 // eventos de los links de géneros
