@@ -128,7 +128,7 @@ const peliculas = {
       año: 2001,
       imdb: 8.6,
       descripcion:"Una niña de 10 años llamada Chihiro se adentra en un mundo misterioso gobernado por una bruja, donde quienes no obedecen son transformados en animales.",
-      imagen:"./src/img/El_viaje_de_chihiro.jpg",
+      imagen:"./src/img/El_viaje_de_Chihiro.jpg",
     },
     {
       titulo: "Alice en el País de las Maravillas",
@@ -154,7 +154,7 @@ const peliculas = {
     año:2001,
     imdb:6.8,
     descripcion:"Un policía encubierto se infiltra en una banda de corredores callejeros para desmantelar sus operaciones ilegales.",
-    imagen:"./src/img/RYF.JPG",
+    imagen:"./src/img/RYF.jpg",
   },
   {
   titulo: "interestellar",
