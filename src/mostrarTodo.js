@@ -109,7 +109,7 @@ const peliculas = {
     director:"Gil Junger",
     año:1999,
     imdb:7.4,
-    descripcion:"Al descubrir que la chica de sus sueños no puede salir con nadie hasta que se enamore su hermana mayor, un adolescente recluta al chico malo de la clase para conquistarla.",
+    descripcion:"Al descubrir que la chica de sus sueños no puede salir con nadie hasta que su hermana mayor lo haga, un chico idea un plan para conquistarla.",
     imagen:"./src/img/10_cosas.jpg",
     },
   ],
