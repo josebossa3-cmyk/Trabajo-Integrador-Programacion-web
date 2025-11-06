@@ -24,6 +24,9 @@ body {
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
 .nav-bar {
   display: flex;
   justify-content: flex-end;
@@ -57,11 +60,12 @@ body {
 }
 
 .hero{
-  background: linear-gradient(to right,rgba(0, 0, 0, 1) 0%,rgba(0, 0, 0, 0.5) 60%,rgba(0, 0, 0, 0) 100%
+  background: linear-gradient(to right,rgb(0, 0, 0) 0%,rgba(0, 0, 0, 0.5) 60%,rgba(0, 0, 0, 0) 100%
   ), url('./img/descarga_7.jpeg') center/cover no-repeat;
   padding: 100px 60px;
   color: #fff;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  
 }
 
 .hero h6{

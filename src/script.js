@@ -97,39 +97,39 @@ const peliculas = {
       imagen: "./src/img/los-cazafantasmas.jpg",
     }
   ],
-  Romantica:[
+  Romantica: [
     {
-      titulo:"TiTanic",
-      director:"James Cameron",
-      año:1997,
-      imdb:7.9,
-      descripcion:"Un joven artista y una mujer de clase alta se enamoran a bordo del fatídico Titanic.",
-      imagen:"./src/img/titanic.jpg",
+      titulo: "TiTanic",
+      director: "James Cameron",
+      año: 1997,
+      imdb: 7.9,
+      descripcion: "Un joven artista y una mujer de clase alta se enamoran a bordo del fatídico Titanic.",
+      imagen: "./src/img/titanic.jpg",
     },
     {
       titulo: "el diario de una pasion",
       director: "Nick Cassavetes",
       año: 2004,
       imdb: 7.8,
-      descripcion:"enamorarse, una joven pareja se separa debido a diferencias de clase.",
+      descripcion: "enamorarse, una joven pareja se separa debido a diferencias de clase.",
       imagen: "./src/img/el_diario.jpg",
     },
     {
-    titulo:"10 cosas que odio de ti",
-    director:"Gil Junger",
-    año:1999,
-    imdb:7.4,
-    descripcion:"Al descubrir que la chica de sus sueños no puede salir con nadie hasta que se enamore su hermana mayor, un adolescente recluta al chico malo de la clase para conquistarla.",
-    imagen:"./src/img/10_cosas.jpg",
+      titulo: "10 cosas que odio de ti",
+      director: "Gil Junger",
+      año: 1999,
+      imdb: 7.4,
+      descripcion: "Al descubrir que la chica de sus sueños no puede salir con nadie hasta que se enamore su hermana mayor, un adolescente recluta al chico malo de la clase para conquistarla.",
+      imagen: "./src/img/10_cosas.jpg",
     },
   ],
-  Fantasia:[
+  Fantasia: [
     {
       titulo: "Harry Potter y el prisionero de Azkaban",
       director: "Alfonso Cuarón",
       año: 2004,
       imdb: 7.9,
-      descripcion:"Harry Potter y el prisionero de Azkaban es la tercera entrega de la saga, donde Harry regresa a Hogwarts mientras un peligroso fugitivo, Sirius Black, escapa de Azkaban. A medida que se revelan secretos del pasado, Harry descubre verdades sobre sus padres, la traición que los rodeó y el vínculo que lo une a Sirius",
+      descripcion: "Harry Potter y el prisionero de Azkaban es la tercera entrega de la saga, donde Harry regresa a Hogwarts mientras un peligroso fugitivo, Sirius Black, escapa de Azkaban. A medida que se revelan secretos del pasado, Harry descubre verdades sobre sus padres, la traición que los rodeó y el vínculo que lo une a Sirius",
       imagen: "./src/img/harry_potter.jpg",
     },
     {
@@ -137,43 +137,43 @@ const peliculas = {
       director: "Hayao Miyazaki",
       año: 2001,
       imdb: 8.6,
-      descripcion:"Una niña de 10 años llamada Chihiro se adentra en un mundo misterioso gobernado por una bruja, donde quienes no obedecen son transformados en animales.",
-      imagen:"./src/img/El_viaje_de_Chihiro.jpg",
+      descripcion: "Una niña de 10 años llamada Chihiro se adentra en un mundo misterioso gobernado por una bruja, donde quienes no obedecen son transformados en animales.",
+      imagen: "./src/img/El_viaje_de_Chihiro.jpg",
     },
     {
       titulo: "Alice en el País de las Maravillas",
       director: "Tim Burton",
       año: 2010,
       imdb: 6.4,
-      descripcion:"Alice regresa al mágico País de las Maravillas, donde se reencuentra con viejos amigos y enfrenta nuevos desafíos para salvar el reino.",
-      imagen:"./src/img/alicia.jpg",
+      descripcion: "Alice regresa al mágico País de las Maravillas, donde se reencuentra con viejos amigos y enfrenta nuevos desafíos para salvar el reino.",
+      imagen: "./src/img/alicia.jpg",
     },
   ],
-  Accion:[
-  {
-  titulo: "rocky IV",
-  director: "Sylvester Stallone",
-  año: 1985,
-  imdb: 6.9,
-  descripcion: "Rocky Balboa se enfrenta al invencible boxeador soviético Ivan Drago en una pelea épica que trasciende el deporte.",
-  imagen: "./src/img/rocky.jpg",
-  },
-  {
-    titulo:"rapido y furioso ",
-    director:"Rob Cohen",
-    año:2001,
-    imdb:6.8,
-    descripcion:"Un policía encubierto se infiltra en una banda de corredores callejeros para desmantelar sus operaciones ilegales.",
-    imagen:"./src/img/RYF.jpg",
-  },
-  {
-  titulo: "interestellar",
-  director: "Christopher Nolan",
-  año: 2014,
-  imdb: 8.7,
-  descripcion: "Un grupo de astronautas viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad.",
-  imagen: "./src/img/Interstella.jpg",
-  }
+  Accion: [
+    {
+      titulo: "rocky IV",
+      director: "Sylvester Stallone",
+      año: 1985,
+      imdb: 6.9,
+      descripcion: "Rocky Balboa se enfrenta al invencible boxeador soviético Ivan Drago en una pelea épica que trasciende el deporte.",
+      imagen: "./src/img/rocky.jpg",
+    },
+    {
+      titulo: "rapido y furioso ",
+      director: "Rob Cohen",
+      año: 2001,
+      imdb: 6.8,
+      descripcion: "Un policía encubierto se infiltra en una banda de corredores callejeros para desmantelar sus operaciones ilegales.",
+      imagen: "./src/img/RYF.jpg",
+    },
+    {
+      titulo: "interestellar",
+      director: "Christopher Nolan",
+      año: 2014,
+      imdb: 8.7,
+      descripcion: "Un grupo de astronautas viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad.",
+      imagen: "./src/img/Interstella.jpg",
+    }
   ]
 };
 
@@ -214,15 +214,14 @@ function mostrarDetallePorObjeto(peli, generoLabel) {
   if (!peli) return;
   detalleGenero.textContent = generoLabel || peli.genero || "—";
   detalleTitulo.textContent = peli.titulo;
-  detalleInfo.textContent = `${peli.director} | ${peli.año} | Rating IMDB: ${
-    peli.imdb || peli.rating || "—"
-  }`;
+  detalleInfo.textContent = `${peli.director} | ${peli.año} | Rating IMDB: ${peli.imdb || peli.rating || "—"
+    }`;
   detalleDescripcion.textContent = peli.descripcion;
   detalleImagen.src = peli.imagen || "";
   const contenedor = document.querySelector(".pelicula-seleccionada");
-  contenedor.style.display = "flex"; 
+  contenedor.style.display = "flex";
   contenedor.scrollIntoView({ behavior: "smooth" });
-  
+
 }
 
 // eventos de los links de géneros

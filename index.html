@@ -53,7 +53,7 @@
         <li class="generos-peliculas"><a href="#comedia">Comedia</a></li>
       </ul>
       <hr />
-      <div class="carrousel-peliculas carrousel-populares">
+      <div class="carrousel-peliculas carrousel-populares" id="peliculas">
         <h4>
           Peliculas Populares | <span id="genero-seleccionado">Aventura</span>
         </h4>
@@ -62,7 +62,7 @@
 
       <hr />
 
-      <div class="carrousel-peliculas carrousel-top">
+      <div class="carrousel-peliculas carrousel-top" id="tendencias">
         <h4>Top Peliculas | IMDB</h4>
         <div class="carousel-container">
           <button id="prevBtn" class="carousel-button"><</button>
@@ -118,7 +118,8 @@
           <label for="email">Email:</label>
           <input type="email" id="email" required />
 
-          <label for="motivo">Motivo:</label>
+
+        <label for="motivo">Motivo:</label>
           <select id="motivo" required>
             <option value="">Seleccionar...</option>
             <option value="problema">Reportar un problema</option>
@@ -126,6 +127,7 @@
             <option value="aporte">Aporte o sugerencia</option>
           </select>
 
+          <span id="error-motivo" style="color: red; display: none;">por favor selecciona un motivo valido </span>
           <label for="mensaje">Mensaje:</label>
           <textarea id="mensaje" rows="5" required></textarea>
 
