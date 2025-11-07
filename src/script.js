@@ -391,10 +391,140 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// enviar formulario
-document.getElementById("form-contacto").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("¡Gracias por contactarte con nosotros! Te responderemos pronto.");
-  modal.style.display = "none";
-  e.target.reset();
+// validacion del formulario 
+document.addEventListener('DOMContentLoaded', function () {
+    const formContacto = document.getElementById('form-contacto');
+    const inputNombre = document.getElementById('nombre');
+    const inputEmail = document.getElementById('email');
+    const inputTelefono = document.getElementById('telefono');
+    const selectMotivo = document.getElementById('motivo');
+    const textareaMensaje = document.getElementById('mensaje');
+
+    const linkContacto = document.getElementById('link-contacto');
+    const modal = document.getElementById('modal-contacto');
+    const cerrar = document.querySelector('.cerrar');
+
+    const MAX_LENGTH_NOMBRE = 20;
+    const MAX_LENGTH_EMAIL = 100;
+    const MAX_LENGTH_MENSAJE = 500;
+    const MIN_LENGTH_MENSAJE = 10;
+
+    function mostrarError(elementId, mensaje) {
+        const errorElement = document.getElementById(`error-${elementId}`);
+        if (errorElement) {
+            errorElement.textContent = mensaje;
+            errorElement.style.color = 'red';
+        }
+    }
+
+    function limpiarError(elementId) {
+        const errorElement = document.getElementById(`error-${elementId}`);
+        if (errorElement) {
+            errorElement.textContent = '';
+        }
+    }
+
+    function validarEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email.toLowerCase());
+    }
+
+    function validarTelefono(telefono) {
+        const re = /^[0-9\s\-()+]{7,15}$/;
+        return re.test(telefono);
+    }
+
+    function mostrarDatosEnviados(datos) {
+        const contenedor = document.querySelector('.modal-content');
+        const resultado = document.createElement('div');
+        resultado.classList.add('resultado-envio');
+        
+
+        const titulo = document.createElement('h3');
+        titulo.textContent = 'Datos enviados:';
+        resultado.appendChild(titulo);
+
+        for (const clave in datos) {
+            const p = document.createElement('p');
+            p.innerHTML = `<strong>${clave}:</strong> ${datos[clave]}`;
+            resultado.appendChild(p);
+        }
+
+        contenedor.appendChild(resultado);
+    }
+
+    // Validación del formulario
+    function validarFormulario(event) {
+        event.preventDefault();
+        let esValido = true;
+
+        limpiarError('nombre');
+        limpiarError('email');
+        limpiarError('telefono');
+        limpiarError('motivo');
+        limpiarError('mensaje');
+
+        const nombre = inputNombre.value.trim();
+        const email = inputEmail.value.trim();
+        const telefono = inputTelefono.value.trim();
+        const motivo = selectMotivo.value;
+        const mensaje = textareaMensaje.value.trim();
+
+        if (nombre.trim === '') {
+            mostrarError('nombre', 'El nombre es obligatorio.');
+            esValido = false;
+        } else if (nombre.length <= 10 || nombre.length >= 20) {
+            mostrarError('nombre', 'el nombre tiene que tener ente 10 y 20 caracteres');
+            esValido = false;
+        }
+
+        if (email === '') {
+            mostrarError('email', 'El email es obligatorio.');
+            esValido = false;
+        } else if (!validarEmail(email)) {
+            mostrarError('email', 'Formato de email inválido.');
+            esValido = false;
+        }
+
+        if (telefono === '') {
+            mostrarError('telefono', 'El teléfono es obligatorio.');
+            esValido = false;
+        } else if (!validarTelefono(telefono)) {
+            mostrarError('telefono', 'Formato de teléfono inválido.');
+            esValido = false;
+        }
+
+        if (motivo === '') {
+            mostrarError('motivo', 'Debes seleccionar un motivo.');
+            esValido = false;
+        }
+
+        if (mensaje === '') {
+            mostrarError('mensaje', 'El mensaje no puede estar vacío.');
+            esValido = false;
+        } else if (mensaje.length < MIN_LENGTH_MENSAJE) {
+            mostrarError('mensaje', `Debe tener al menos ${MIN_LENGTH_MENSAJE} caracteres.`);
+            esValido = false;
+        }
+
+        if (esValido) {
+            const datos = {
+                Nombre: nombre,
+                Email: email,
+                Teléfono: telefono,
+                Motivo: motivo,
+                Mensaje: mensaje
+            };
+            mostrarDatosEnviados(datos);
+            formContacto.reset();
+        }
+    }
+    if (formContacto) {
+        formContacto.addEventListener('submit', validarFormulario);
+    }
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 });
