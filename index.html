@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WallUrban</title>
+    <title>CinemaCenter</title>
+    <link rel="icon" type="image/x-icon" href="./src/img/favicon.png" />
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +20,7 @@
         <a href="#home" class="nav-logo">CinemaCenter</a>
         <a href="mostrarTodo.html">Mostrar Todo</a>
         <a href="#peliculas">Peliculas</a>
-        <a href="#tendencias">Tendencias</a>
+        <a href="#top-peliculas">Top Peliculas</a>
         <a href="#contacto" id="link-contacto">Contacto</a>
         <a href="javascript:void(0);" class="icon" onclick="menuHamburguesa()">
           <i class="fa fa-bars"></i>
@@ -33,12 +34,7 @@
         Cuando el ex investigador de la ONU Gerry Lane (Brad Pitt) y su familia
         se quedan atrapados en un atasco urbano, intuye que no se trata de un
         atasco cualquiera. Sus sospechas se confirman cuando, de repente, la
-        ciudad se sumerge en el caos. Un virus letal, que se propaga a través de
-        una simple mordedura, está convirtiendo a personas sanas en seres
-        despiadados, irracionales y salvajes. Mientras la pandemia amenaza con
-        consumir a la humanidad, Gerry lidera una búsqueda mundial para
-        encontrar el origen de la infección y, con suerte, una forma de detener
-        su propagación.
+        ciudad se sumerge en el caos.
       </p>
       <button>Ver ahora</button>
     </section>
@@ -62,8 +58,8 @@
 
       <hr />
 
-      <div class="carrousel-peliculas carrousel-top" id="tendencias">
-        <h4>Top Peliculas | IMDB</h4>
+      <div class="carrousel-peliculas carrousel-top" id="top-peliculas">
+        <h4>Top según IMDB</h4>
         <div class="carousel-container">
           <button id="prevBtn" class="carousel-button"><</button>
           <div class="carousel2">
@@ -86,7 +82,7 @@
         <p class="detalle-descripcion">Lorem ipsum...</p>
         <div>
           <img class="detalle-imagen" src="" alt="imagen de la pelicula" />
-          <button>Ver Ahora</button>
+          <button>Ver Trailer</button>
         </div>
       </div>
     </section>
@@ -120,25 +116,24 @@
           <span class="error-message" id="error-email"></span>
           <input type="email" id="email" maxlength="100" />
 
-            <label for="telefono">Teléfono:</label>
-            <span class="error-message" id="error-telefono"></span>
-            <input type="tel" id="telefono" maxlength="15" />
-            
+          <label for="telefono">Teléfono:</label>
+          <span class="error-message" id="error-telefono"></span>
+          <input type="tel" id="telefono" maxlength="15" />
 
-        <label for="motivo">Motivo:</label>
+          <label for="motivo">Motivo:</label>
           <span class="error-message" id="error-motivo"></span>
-          <select id="motivo" >
+          <select id="motivo">
             <option value="">Seleccionar...</option>
             <option value="problema">Reportar un problema</option>
             <option value="consulta">Consulta general</option>
             <option value="aporte">Aporte o sugerencia</option>
-
           </select>
           <label for="mensaje">Mensaje:</label>
           <span class="error-message" id="error-mensaje"></span>
-          <textarea id="mensaje" rows="5" maxlength="500" ></textarea>
-
-          <button type="submit">Enviar</button>
+          <textarea id="mensaje" rows="5" maxlength="500"></textarea>
+          <div class="btn-enviar">
+            <button type="submit">Enviar</button>
+          </div>
         </form>
       </div>
     </div>
