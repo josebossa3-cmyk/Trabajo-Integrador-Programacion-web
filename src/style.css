@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,20 +11,24 @@ body {
   line-height: 1.6;
 }
 
-.hero, .generos, .pelicula-seleccionada{
+.hero,
+.generos,
+.pelicula-seleccionada {
   animation: fadeIn 1s ease;
 }
 
-@keyframes fadeIn{
-  from{
-    opacity: 0; transform: translateY(10px);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  to{
-    opacity: 1; transform: translateY(0);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 .nav-bar {
@@ -39,7 +43,7 @@ html{
   border-bottom: 2px solid #a00;
 }
 
-.nav-bar a{
+.nav-bar a {
   color: #fff;
   text-decoration: none;
   padding: 12px 18px;
@@ -47,47 +51,52 @@ html{
   transition: 0.3s;
 }
 
-.nav-bar .nav-logo{
+.nav-bar .nav-logo {
   margin-right: auto;
   font-weight: 700;
   font-size: 1.4em;
   color: #ff2d2d;
 }
 
-.nav-bar a:hover, .nav-bar a.active{
+.nav-bar a:hover,
+.nav-bar a.active {
   background: #a00;
   border-radius: 25px;
 }
 
-.hero{
-  background: linear-gradient(to right,rgb(0, 0, 0) 0%,rgba(0, 0, 0, 0.5) 60%,rgba(0, 0, 0, 0) 100%
-  ), url('./img/world-war-z.jpg') center/cover no-repeat;
+.hero {
+  background: linear-gradient(
+      to right,
+      rgb(0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("./img/world-war-z.jpg") center/cover no-repeat;
   padding: 200px 60px;
   color: #fff;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-  
 }
 
-.hero h6{
+.hero h6 {
   color: #ff4040;
   text-transform: uppercase;
   font-size: 0.9em;
   letter-spacing: 2px;
 }
 
-.hero h1{
+.hero h1 {
   font-size: 4em;
   font-weight: 800;
   margin-top: 10px;
 }
 
-.hero p{
+.hero p {
   max-width: 550px;
   margin-top: 20px;
   font-size: 1rem;
 }
 
-.hero button{
+.hero button {
   margin-top: 20px;
   background: #a00;
   border: none;
@@ -99,7 +108,7 @@ html{
   transition: 0.3s;
 }
 
-.hero button:hover{
+.hero button:hover {
   background: #ff3030;
 }
 
@@ -107,7 +116,8 @@ html{
   .nav-bar a:not(:first-child) {
     display: none;
   }
-  .nav-bar a.icon{
+  .nav-bar a.icon {
+    color: #fff;
     float: right;
     display: block;
   }
@@ -117,25 +127,25 @@ html{
   .nav-bar.responsive {
     position: relative;
   }
-  .nav-bar.responsive .icon{
-    position:absolute;
+  .nav-bar.responsive .icon {
+    position: absolute;
     right: 0;
     top: 0;
   }
-  .nav-bar.responsive a{
+  .nav-bar.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
 }
 
-.generos{
+.generos {
   text-align: center;
   padding: 40px 0;
   background: rgba(10, 0, 0, 0.85);
 }
 
-.generos ul{
+.generos ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -144,7 +154,7 @@ html{
   margin-bottom: 30px;
 }
 
-.generos a{
+.generos a {
   color: #fff;
   text-decoration: none;
   padding: 8px 20px;
@@ -153,11 +163,12 @@ html{
   transition: 0.3s;
 }
 
-.generos a:hover, .generos a.active{
+.generos a:hover,
+.generos a.active {
   background: #a00;
 }
 
-.segundo-carrousel{
+.segundo-carrousel {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,7 +177,7 @@ html{
   background: #1a0000;
 }
 
-.segundo-carrousel ul{
+.segundo-carrousel ul {
   position: relative;
   display: flex;
   gap: 20px;
@@ -176,7 +187,7 @@ html{
   scrollbar-width: none;
 }
 
-.segundo-carrousel img{
+.segundo-carrousel img {
   width: 200px;
   height: 300px;
   object-fit: cover;
@@ -185,18 +196,18 @@ html{
   transition: 0.3s;
 }
 
-.segundo-carrousel img:hover{
+.segundo-carrousel img:hover {
   transform: scale(1.05);
   border-color: #ff2d2d;
 }
-h4{
+h4 {
   margin-bottom: 15px;
   font-size: 1.5em;
   color: #ff2d2d;
 }
 
-
-#prevBtn, #nextBtn {
+#prevBtn,
+#nextBtn {
   position: inherit;
   transform: translateY(-50%);
   background-color: #ff2d2d;
@@ -219,22 +230,22 @@ h4{
   right: 20%;
 }
 
-
-#prevBtn:hover, #nextBtn:hover{
+#prevBtn:hover,
+#nextBtn:hover {
   background-color: #ff5050;
   transform: translateY(-50%) scale(1.1);
 }
 
-.carrousel-peliculas ul{
-overflow-x: auto; 
-gap: 20px;
+.carrousel-peliculas ul {
+  overflow-x: auto;
+  gap: 20px;
   list-style: none;
   overflow-x: auto;
   padding: 10px 0;
   scrollbar-width: none;
 }
 
-.carrousel-peliculas li{
+.carrousel-peliculas li {
   padding: 10px 0;
   position: relative;
 }
@@ -269,7 +280,7 @@ gap: 20px;
   background: #861717;
 }
 
-.pelicula-seleccionada{
+.pelicula-seleccionada {
   padding: 60px;
   background: #0c0000;
   display: none;
@@ -277,13 +288,12 @@ gap: 20px;
   align-items: flex-start;
 }
 
-
-.pelicula h1{
+.pelicula h1 {
   color: #ff2d2d;
   font-size: 2.2em;
 }
 
-.pelicula p{
+.pelicula p {
   max-width: 600px;
   margin-top: 15px;
   font-size: 1em;
@@ -295,7 +305,7 @@ gap: 20px;
   border-radius: 12px;
 }
 
-.pelicula button{
+.pelicula button {
   display: block;
   margin-top: 20px;
   background: #ff2d2d;
@@ -308,11 +318,73 @@ gap: 20px;
   transition: 0.3s;
 }
 
-.pelicula button:hover{
+.pelicula button:hover {
   background-color: #be3d3d;
 }
 
-footer{
+.detalle-trailer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detalle-trailer iframe {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+/* modal trailer */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  overflow: hidden;
+  background: #000;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  box-shadow: 0 0 30px rgba(255, 45, 45, 0.4);
+  left: 25%;
+  top: 20%;
+}
+
+.cerrar {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.cerrar:hover {
+  transform: scale(1.2);
+}
+
+#contenedor-trailer iframe {
+  width: 100%;
+  border-radius: 10px;
+}
+
+ /* footer */
+
+
+footer {
   background: #150000;
   padding: 25px;
   text-align: center;
@@ -335,71 +407,55 @@ footer .redes img {
 }
 
 
-/* Modal contacto */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  backdrop-filter: blur(3px);
-}
 
-.modal-content {
-  background: #fff;
-  color: #000;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  position: relative;
-}
 
-.cerrar {
-  position: absolute;
-  right: 15px; top: 10px;
-  font-size: 24px;
-  cursor: pointer;
-}
 
-#form-contacto input,
-#form-contacto select,
-#form-contacto textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-#form-contacto button {
-  background: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#mensaje{
-  resize: none;
-}
-
-.btn-enviar {
-  text-align: center;
-}
-
-/* mostrar todo html */ 
+/* mostrar todo html */
 .mostrar-todo {
-  padding: 40px;;
+  padding: 40px;
 }
 .detalle-pelicula {
-  display: block ;
+  display: block;
   margin-top: 50px;
   margin-left: 30px;
+}
+
+.info-catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.info-catalogo .columna {
+  flex: 1 1 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.info-catalogo .columna:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.info-catalogo h3 {
+  color: #ff2d2d;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.info-catalogo p {
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #eee;
 }
 
 .detalle-pelicula img {
@@ -477,13 +533,13 @@ footer .redes img {
 }
 
 /* Mostrar todo */
-.detalle-pelicula h2{
+.detalle-pelicula h2 {
   color: #ff2d2d;
   font-size: 1.8em;
   margin-bottom: 10px;
 }
 
-.detalle-pelicula p{
+.detalle-pelicula p {
   max-width: 600px;
   margin-top: 15px;
   font-size: 1em;

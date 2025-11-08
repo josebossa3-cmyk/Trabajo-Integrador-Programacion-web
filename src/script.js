@@ -1,13 +1,3 @@
-// menu hamburguesa (hay que cambiar el icono en el html pq no hay que utilizar fontawesome)
-function menuHamburguesa() {
-  const x = document.getElementById("navbar");
-  if (x.className === "nav-bar") {
-    x.className += " responsive";
-  } else {
-    x.className = "nav-bar";
-  }
-}
-
 // aca podes cargar las peliclas por genero
 const peliculas = {
   Aventura: [
@@ -242,15 +232,32 @@ function cargarPeliculas(genero) {
 function mostrarDetallePorObjeto(peli, generoLabel) {
   if (!peli) return;
   detalleGenero.textContent = generoLabel || peli.genero || "—";
-  
+
   detalleTitulo.textContent = peli.titulo;
-  detalleInfo.textContent = `${peli.director} | ${peli.año} | Rating IMDB: ${peli.imdb || peli.rating || "—"
-    }`;
+  detalleInfo.textContent = `${peli.director} | ${peli.año} | Rating IMDB: ${peli.imdb}`;
   detalleDescripcion.textContent = peli.descripcion;
   detalleImagen.src = peli.imagen || "";
+
+  // contenedor donde se muestra todo el detalle
   const contenedor = document.querySelector(".pelicula-seleccionada");
+
   contenedor.style.display = "flex";
   contenedor.scrollIntoView({ behavior: "smooth" });
+  contenedor.classList.remove("mostrar");
+  void contenedor.offsetWidth; // fuerza reflow
+  contenedor.classList.add("mostrar");
+
+  contenedor.scrollIntoView({ behavior: "smooth" });
+
+  // botón de trailer
+  const botonExistente = contenedor.querySelector(".btn-ver-trailer");
+  if (botonExistente) botonExistente.remove(); // evitar duplicados
+
+  const btnTrailer = document.createElement("button");
+  btnTrailer.textContent = "Ver Trailer";
+  btnTrailer.classList.add("btn-ver-trailer");
+  btnTrailer.dataset.trailer = peli.trailerId;
+  detalleImagen.insertAdjacentElement("afterend", btnTrailer);
 }
 
 // eventos de los links de géneros
@@ -396,157 +403,41 @@ window.addEventListener("DOMContentLoaded", () => {
   initTopCarousel();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("modal-trailer");
+  const contenedorTrailer = document.getElementById("contenedor-trailer");
+  const cerrarTrailer = document.getElementById("cerrar-trailer");
 
-// modal contacto
-const modal = document.getElementById("modal-contacto");
-const cerrar = document.querySelector(".cerrar");
-const linkContacto = document.getElementById("link-contacto");
+  document.body.addEventListener("click", (e) => {
+    if (e.target.matches(".btn-ver-trailer")) {
+      const trailerId = e.target.dataset.trailer;
+      const trailerURL = `https://www.youtube.com/embed/${trailerId}`;
 
-// abrir modal
-linkContacto.addEventListener("click", (e) => {
-  e.preventDefault();
-  modal.style.display = "block";
-});
+      contenedorTrailer.innerHTML = `
+        <iframe width="100%" height="400"
+          src="${trailerURL}"
+          title="Trailer de película"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      `;
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+  });
 
-// cerrar modal
-cerrar.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-// cerrar al hacer clic fuera del contenido
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
+  cerrarTrailer.addEventListener("click", () => {
     modal.style.display = "none";
-  }
-});
+    contenedorTrailer.innerHTML = "";
+    document.body.style.overflow = "";
+  });
 
-// validacion del formulario 
-document.addEventListener('DOMContentLoaded', function () {
-    const formContacto = document.getElementById('form-contacto');
-    const inputNombre = document.getElementById('nombre');
-    const inputEmail = document.getElementById('email');
-    const inputTelefono = document.getElementById('telefono');
-    const selectMotivo = document.getElementById('motivo');
-    const textareaMensaje = document.getElementById('mensaje');
-
-    const modal = document.getElementById('modal-contacto');
-
-    function mostrarError(elementId, mensaje) {
-        const errorElement = document.getElementById(`error-${elementId}`);
-        if (errorElement) {
-            errorElement.textContent = mensaje;
-            errorElement.style.color = 'red';
-        }
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      contenedorTrailer.innerHTML = "";
+      document.body.style.overflow = "";
     }
-
-    function limpiarError(elementId) {
-        const errorElement = document.getElementById(`error-${elementId}`);
-        if (errorElement) {
-            errorElement.textContent = '';
-        }
-    }
-
-    function validarEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email.toLowerCase());
-    }
-
-    function validarTelefono(telefono) {
-        const re = /^[0-9\s\-()+]{7,15}$/;
-        return re.test(telefono);
-    }
-
-    function mostrarDatosEnviados(datos) {
-        const contenedor = document.querySelector('.modal-content');
-        const resultado = document.createElement('div');
-        resultado.classList.add('resultado-envio');
-        
-
-        const titulo = document.createElement('h3');
-        titulo.textContent = 'Datos enviados:';
-        resultado.appendChild(titulo);
-
-        for (const clave in datos) {
-            const p = document.createElement('p');
-            p.innerHTML = `<strong>${clave}:</strong> ${datos[clave]}`;
-            resultado.appendChild(p);
-        }
-
-        contenedor.appendChild(resultado);
-    }
-
-    // Validación del formulario
-    function validarFormulario(event) {
-        event.preventDefault();
-        let esValido = true;
-
-        limpiarError('nombre');
-        limpiarError('email');
-        limpiarError('telefono');
-        limpiarError('motivo');
-        limpiarError('mensaje');
-
-        const nombre = inputNombre.value.trim();
-        const email = inputEmail.value.trim();
-        const telefono = inputTelefono.value.trim();
-        const motivo = selectMotivo.value;
-        const mensaje = textareaMensaje.value.trim();
-
-        if (nombre.trim === '') {
-            mostrarError('nombre', 'El nombre es obligatorio.');
-            esValido = false;
-        } else if (nombre.length <= 10 || nombre.length >= 20) {
-            mostrarError('nombre', 'El nombre tiene que tener ente 10 y 20 caracteres');
-            esValido = false;
-        }
-
-        if (email === '') {
-            mostrarError('email', 'El email es obligatorio.');
-            esValido = false;
-        } else if (!validarEmail(email)) {
-            mostrarError('email', 'Formato de email inválido.');
-            esValido = false;
-        }
-
-        if (telefono === '') {
-            mostrarError('telefono', 'El teléfono es obligatorio.');
-            esValido = false;
-        } else if (!validarTelefono(telefono)) {
-            mostrarError('telefono', 'Formato de teléfono inválido.');
-            esValido = false;
-        }
-
-        if (motivo === '') {
-            mostrarError('motivo', 'Debes seleccionar un motivo.');
-            esValido = false;
-        }
-
-        if (mensaje === '') {
-            mostrarError('mensaje', 'El mensaje no puede estar vacío.');
-            esValido = false;
-        } else if (mensaje.length < 10) {
-            mostrarError('mensaje', `Debe tener al menos 10 caracteres.`);
-            esValido = false;
-        }
-
-        if (esValido) {
-            const datos = {
-                Nombre: nombre,
-                Email: email,
-                Teléfono: telefono,
-                Motivo: motivo,
-                Mensaje: mensaje
-            };
-            mostrarDatosEnviados(datos);
-            formContacto.reset();
-        }
-    }
-    if (formContacto) {
-        formContacto.addEventListener('submit', validarFormulario);
-    }
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
+  });
 });

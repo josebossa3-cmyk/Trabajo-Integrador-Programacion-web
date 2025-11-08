@@ -17,18 +17,16 @@
   <body>
     <header>
       <div class="nav-bar" id="navbar">
-        <a href="#home" class="nav-logo">CinemaCenter</a>
+        <a href="index.html" class="nav-logo">CinemaCenter</a>
         <a href="mostrarTodo.html">Mostrar Todo</a>
         <a href="#peliculas">Peliculas</a>
         <a href="#top-peliculas">Top Peliculas</a>
-        <a href="#contacto" id="link-contacto">Contacto</a>
-        <a href="javascript:void(0);" class="icon" onclick="menuHamburguesa()">
-          <i class="fa fa-bars"></i>
-        </a>
+        <a href="contacto.html" id="link-contacto">Contacto</a>
       </div>
     </header>
+
     <section class="hero">
-      <h6>¿De qué se trata?</h6>
+      <h6>¡NUEVO INGRESO!</h6>
       <h1>World War Z</h1>
       <p>
         Cuando el ex investigador de la ONU Gerry Lane (Brad Pitt) y su familia
@@ -36,7 +34,6 @@
         atasco cualquiera. Sus sospechas se confirman cuando, de repente, la
         ciudad se sumerge en el caos.
       </p>
-      <button>Ver ahora</button>
     </section>
 
     <section class="generos">
@@ -72,7 +69,6 @@
 
     <hr />
 
-    <!-- estaria bueno que esto se cargue dinamicamente con js segun la pelicula seleccionada y que este en display none al inicio. -->
     <section class="pelicula-seleccionada">
       <div class="pelicula">
         <h4 class="detalle-genero">Genero</h4>
@@ -82,8 +78,11 @@
         <p class="detalle-descripcion">Lorem ipsum...</p>
         <div>
           <img class="detalle-imagen" src="" alt="imagen de la pelicula" />
-          <button>Ver Trailer</button>
         </div>
+        <div
+          class="detalle-trailer"
+          style="display: none; margin-top: 20px"
+        ></div>
       </div>
     </section>
 
@@ -102,39 +101,10 @@
       </h6>
     </footer>
 
-    <!-- modal contacto -->
-    <div id="modal-contacto" class="modal">
+    <div id="modal-trailer" class="modal">
       <div class="modal-content">
-        <span class="cerrar">&times;</span>
-        <h2>Contáctanos</h2>
-        <form id="form-contacto">
-          <label for="nombre">Nombre:</label>
-          <span class="error-message" id="error-nombre"></span>
-          <input type="text" id="nombre" maxlength="20" />
-
-          <label for="email">Email:</label>
-          <span class="error-message" id="error-email"></span>
-          <input type="email" id="email" maxlength="100" />
-
-          <label for="telefono">Teléfono:</label>
-          <span class="error-message" id="error-telefono"></span>
-          <input type="tel" id="telefono" maxlength="15" />
-
-          <label for="motivo">Motivo:</label>
-          <span class="error-message" id="error-motivo"></span>
-          <select id="motivo">
-            <option value="">Seleccionar...</option>
-            <option value="problema">Reportar un problema</option>
-            <option value="consulta">Consulta general</option>
-            <option value="aporte">Aporte o sugerencia</option>
-          </select>
-          <label for="mensaje">Mensaje:</label>
-          <span class="error-message" id="error-mensaje"></span>
-          <textarea id="mensaje" rows="5" maxlength="500"></textarea>
-          <div class="btn-enviar">
-            <button type="submit">Enviar</button>
-          </div>
-        </form>
+        <span class="cerrar" id="cerrar-trailer">&times;</span>
+        <div id="contenedor-trailer"></div>
       </div>
     </div>
 
